@@ -1,2 +1,2 @@
 # content
-laravia package content
+content package
