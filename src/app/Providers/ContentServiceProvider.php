@@ -2,7 +2,9 @@
 
 namespace Laravia\Content\App\Providers;
 
+use Laravia\Content\App\Models\Content;
 use Laravia\Core\App\Providers\ServiceProvider;
+use Laravia\User\App\Models\User;
 
 class ContentServiceProvider extends ServiceProvider
 {
@@ -10,6 +12,15 @@ class ContentServiceProvider extends ServiceProvider
 
     public function boot()
     {
+        $this->addRelations();
+
         $this->defaultBootMethod();
+    }
+
+    private function addRelations()
+    {
+        User::resolveRelationUsing('contents', function ($model) {
+            return $model->hasMany(Content::class);
+        });
     }
 }

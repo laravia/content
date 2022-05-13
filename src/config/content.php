@@ -4,7 +4,7 @@ use Laravia\Core\App\Laravia;
 
 $config['content'] = [
     'links' => [
-        ['name' => 'laravia.content::home', 'text' => Laravia::trans('content.siteTitleHome'), 'sort' => 10],
+        ['name' => 'laravia.content::index', 'text' => Laravia::trans('content.siteTitleIndex'), 'sort' => 10],
     ],
 ];
 
