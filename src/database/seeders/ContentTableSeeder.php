@@ -12,7 +12,7 @@ class ContentTableSeeder extends Seeder
     public function run()
     {
 
-        $faker = Faker::create(Posting::class);
+        $faker = Faker::create(Content::class);
 
         for ($i = 1; $i <= 1000; $i++) {
             $fromDateTime = Carbon::now()->subDays(rand(1, 400))->subMinutes(rand(1, 400));
